@@ -26,9 +26,13 @@ Route::group(
         return view('pages.Students.dashboard');
     })->name('dashboard.Students');
 
+
     Route::group(['namespace' => 'Students\dashboard'], function () {
         Route::resource('student_exams', 'ExamsController');
         Route::resource('profile-student', 'ProfileController');
-    });
 
+        // Attendance report
+        Route::get('student/attendances', 'AttendanceController@index')->name('student.attendances');
+        Route::post('student/attendances', 'AttendanceController@search')->name('student.attendance.search');
+    });
 });
