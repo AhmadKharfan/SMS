@@ -19,6 +19,12 @@
                     class="right-nav-text">الامتحانات</span></a>
         </li>
 
+        <!-- تقرير الحضور والغياب -->
+        <li>
+            <a href="{{ route('student.attendances') }}"><i class="fas fa-calendar-check"></i>
+                <span class="right-nav-text">تقرير الحضور والغياب</span>
+            </a>
+        </li>
 
         <!-- Settings-->
         <li>
