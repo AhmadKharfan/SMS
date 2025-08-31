@@ -54,7 +54,7 @@ Route::group(
      Route::get('student_quizze/{id}','QuizzController@student_quizze')->name('student.quizze');
      Route::post('repeat_quizze', 'QuizzController@repeat_quizze')->name('repeat.quizze');
 
-
+     Route::resource('questions', 'QuestionController');
     });
 
 });

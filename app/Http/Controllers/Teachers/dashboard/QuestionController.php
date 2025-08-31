@@ -4,10 +4,22 @@ namespace App\Http\Controllers\Teachers\dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\Question;
+use App\Repository\QuestionRepositoryInterface;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
 {
+    protected $Question;
+
+    public function __construct(QuestionRepositoryInterface $Question)
+    {
+        $this->Question =$Question;
+    }
+
+    public function index()
+    {
+        return $this->Question->index();
+    }
 
     public function store(Request $request)
     {
